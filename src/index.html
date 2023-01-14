@@ -1,0 +1,27 @@
+<html lang="en-US">
+  <head>
+    <title>Currency Exchanger</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1> Currency Exchange</h1>
+      
+      <form>
+        <label for="location">Enter the amount in USD that you would like to exchange:</label>
+        <input id="location" type="text" name="location">
+        <br>
+        <label for="currency">Select a currency to exchange to:</label>
+        <select name="currency" id="currency">
+          <option value="euro">Euro</option>
+          <option value="yen">Japanese Yen</option>
+          <option value="pound">Pound sterling </option>
+          <option value="can-dollar">Canadian dollar</option>
+          <option value="swiss-franc">Swiss franc </option>
+        </select>
+        <br>
+        <button type="submit" class="btn-success" id="submitCurrency">Covert Currency</button>
+      </form>
+      <p id="showResponse"></p>
+    </div>
+  </body>
+  </html>
