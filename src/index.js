@@ -11,11 +11,19 @@ async function getCurrency(amount){
 
 function printCurrency(response, amount) {
 const currSelect = document.querySelector('#currency-name').value;
-  if (currSelect === euro){
-    document.querySelector('#showResponse').innerText = `$${amount} is ${response.proximity}.`;
+  if (currSelect === "euro"){
+    document.querySelector('#showResponse').innerText = `$${amount} is ${response.conversion_rates.EUR * amount}.`;
+  }else if (currSelect === "yen"){
+    document.querySelector('#showResponse').innerText = `$${amount} is ${response.conversion_rates.JPY * amount}.`;
+  }else if (currSelect === "pound"){
+    document.querySelector('#showResponse').innerText = `$${amount} is ${response.conversion_rates.GBP * amount}.`;
+  }else if (currSelect === "can-dollar"){
+    document.querySelector('#showResponse').innerText = `$${amount} is ${response.conversion_rates.CAD * amount}.`;
+  }else if (currSelect === "swiss-franc"){
+    document.querySelector('#showResponse').innerText = `$${amount} is ${response.conversion_rates.CHF * amount}.`;
   }
-
 }
+
 function handleFormSubmission(event) {
   event.preventDefault();
   const amount = document.querySelector('#currency-amt').value;
