@@ -25,6 +25,7 @@
 - Build the project using webpack with $ npm run build.
 - Start a development server with $ npm run start.
 - Lint JS files in the src folder with $ npm run lint.
+- Go to https://www.exchangerate-api.com/ to obtain API key.
 - Add .env file and add API key.
 - Commit .env to protect the privacy of your API key.
 
