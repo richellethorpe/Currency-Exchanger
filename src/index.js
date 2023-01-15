@@ -1,30 +1,32 @@
-// import getCurrency from "./Currency-Exchanger";
+import CurrencyCounter from "./Currency-Exchanger";
 
-// async function getCurrency(amount, currSelect){
-//   const response = await CurrencyRates.getCurrency(amount, currSelect);
-//   if (response.result === "success"){
-//     printCurrency(response, amount, currSelect);
-//     console.log("printCurrency");
-//   }else {
-//     printError(amount, currSelect);
-//   }
-// }
-
-function getCurrency(amount, currSelect){
-  let request = new XMLHttpRequest();
-  const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
-  request.addEventListener("loadend", function() {
-    const apiResponse = JSON.parse(this.responseText);
-    if (this.status === 200){
-     printCurrency(apiResponse, amount, currSelect)
-    }else{
-      document.querySelector(`#showResponse`).innerText = `Error Message: ${this.status}. Rub your magic lamp and try again, my friend.`;
-
-    }
-});
-request.open("GET", url, true);
-request.send();
+async function getCurrency(amount, currSelect) {
+  const apiResponse = await CurrencyCounter.getCurrency(amount, currSelect);
+  console.log(apiResponse.documentation);
+  if (apiResponse.documentation) {
+    printCurrency(apiResponse, amount, currSelect);
+  } else {
+    console.log("error")
+   // printError(apiResponse, searchTerm); 
+  }
 }
+
+// function getCurrency(amount, currSelect){
+//   let request = new XMLHttpRequest();
+//   // const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
+//   const url = `https://v6.exchangerate-api.com/v6/d6e7ee65568b0fa5d8b71229 /latest/USD?=`;
+//   request.addEventListener("loadend", function() {
+//     const apiResponse = JSON.parse(this.responseText);
+//     if (this.status === 200){
+//      printCurrency(apiResponse, amount, currSelect)
+//     }else{
+//       document.querySelector(`#showResponse`).innerText = `Error Message: ${this.status}. Rub your magic lamp and try again, my friend.`;
+
+//     }
+// });
+// request.open("GET", url, true);
+// request.send();
+// }
 
 function printCurrency(apiResponse, amount, currSelect) {
 
