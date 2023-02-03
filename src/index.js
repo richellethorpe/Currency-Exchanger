@@ -1,8 +1,9 @@
+import './css/styles.css';
 import CurrencyCounter from "./Currency-Exchanger";
+
 
 async function getCurrency(amount, currSelect) {
   const apiResponse = await CurrencyCounter.getCurrency(amount, currSelect);
-  console.log(apiResponse.documentation);
   if (apiResponse.documentation) {
     printCurrency(apiResponse, amount, currSelect);
   } else {
@@ -33,7 +34,6 @@ function printCurrency(apiResponse, amount, currSelect) {
 }
 
 function printError(amount, currSelect){
-  console.log("printerror");
   document.querySelector(`#showResponse`).innerText = `There was an error accessing the currency converter for ${amount} in ${currSelect}: We were unable to find information on that currency. Please try again.`;
 }
 

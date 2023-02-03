@@ -13,6 +13,7 @@
 - JSON
 - WEBPACK
 - NODE
+- API CALLS
 
 ## Description
 
@@ -20,15 +21,15 @@
 
 
 ## Setup/Installation Requirements
-- Clone this repository to your desktop.
-- Install all packages with $ npm install.
-- Build the project using webpack with $ npm run build.
-- Start a development server with $ npm run start.
-- Lint JS files in the src folder with $ npm run lint.
-- Go to https://www.exchangerate-api.com/ to obtain API key.
-- Add .env file and add API key.
-- Commit .env to protect the privacy of your API key.
 
+- Clone this repository to your desktop
+- Create an API Key at https://www.exchangerate-api.com/
+- Create a .env file in the root directory. Within the .env file create a new line: API_KEY = [Your Generated Key Here]
+- Navigate to the root directory of the repository, and access the following functionalities using the command line:
+- Install all packages with $ npm install
+- Build the project with $ npm run build
+- Start the development server with $ npm run start
+- Lint the JS files in the src folder with $ npm run lint
 
 ## Known bugs
 
